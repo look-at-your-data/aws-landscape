@@ -1,5 +1,5 @@
 resource "aws_cloudwatch_metric_alarm" "Low_Disk_Space_kafkaInstance" {
-  alarm_name                = "Low_Disk_Space_kafkaInstance"
+  alarm_name                = "Disk_Space_kafkaInstance"
   comparison_operator       = "GreaterThanOrEqualToThreshold"
   evaluation_periods        = "2"
   metric_name               = "disk_used_percent"
