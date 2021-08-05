@@ -6,10 +6,11 @@ defaults: &defaults
 version: 2
 jobs:
   build:
-      branches:
-        only:
-          - master
- dummy:
+    branches:
+      only:
+        - master
+
+  dummy:
     <<: *defaults
     steps:
     - run:
