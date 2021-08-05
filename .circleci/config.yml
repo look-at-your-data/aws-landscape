@@ -5,6 +5,10 @@ defaults: &defaults
 
 version: 2
 jobs:
+  build:
+      branches:
+        only:
+          - master
  dummy:
     <<: *defaults
     steps:
@@ -34,6 +38,7 @@ jobs:
                  ./scripts/run_terraform.sh $TRAINING_COHORT ingester apply -input=false -auto-approve -var-file=prod-env.tfvars;
                  ./scripts/run_terraform.sh $TRAINING_COHORT monitoring_dashboard apply -input=false -auto-approve;
                  ./scripts/run_terraform.sh $TRAINING_COHORT client_vpn apply -input=false -auto-approve;
+                 ./scripts/run_terraform.sh $TRAINING_COHORT kafka_monitoring apply -input=false -auto-approve;
 
  buildClientVPN:
      <<: *defaults
